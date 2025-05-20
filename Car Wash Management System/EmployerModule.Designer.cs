@@ -205,6 +205,7 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(208, 30);
             this.txtSalary.TabIndex = 14;
+            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             // 
             // txtPassword
             // 
@@ -212,6 +213,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(511, 30);
             this.txtPassword.TabIndex = 15;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtAddress
             // 
@@ -340,7 +342,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblEid;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.Button btnSave;
@@ -356,5 +357,6 @@
         public System.Windows.Forms.RadioButton rdMale;
         public System.Windows.Forms.RadioButton rdFemale;
         private System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.Label lblEid;
     }
 }

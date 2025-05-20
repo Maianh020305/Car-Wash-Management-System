@@ -20,9 +20,11 @@ namespace Car_Wash_Management_System
         string title = "Car Wash Management System";
         bool check = false;
         Employer employer;
-        public EmployerModule()
+        public EmployerModule(Employer emp)
         {
             InitializeComponent();
+            employer = emp;
+            cbRole.SelectedIndex = 2;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -35,25 +37,30 @@ namespace Car_Wash_Management_System
         {//type try and then double press Tab key 
             try
             {
-                if (MessageBox.Show("Are you sure you want to register this employer?", "Employer Registraion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                checkField();
+                if (check)
                 {
-                    cm = new SqlCommand("INSERT INTO tbEmployer(name,phone,address,dob,gender,role,salary,password)VALUES(@name,@phone,@address,@dob,@gender,@role,@salary,@password)", dbcon.connect());
-                    cm.Parameters.AddWithValue("@name", txtName.Text);
-                    cm.Parameters.AddWithValue("@phone", txtPhone.Text);
-                    cm.Parameters.AddWithValue("@address", txtAddress.Text);
-                    cm.Parameters.AddWithValue("@dob", dtDob.Value);
-                    cm.Parameters.AddWithValue("@gender", rdMale.Checked ? "Male" : "Female");//like if condition
-                    cm.Parameters.AddWithValue("@role", cbRole.Text);
-                    cm.Parameters.AddWithValue("@salary", txtSalary.Text);
-                    cm.Parameters.AddWithValue("@password", txtPassword.Text);
+                    if (MessageBox.Show("Are you sure you want to register this employer?", "Employer Registraion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cm = new SqlCommand("INSERT INTO tbEmployer(name,phone,address,dob,gender,role,salary,password)VALUES(@name,@phone,@address,@dob,@gender,@role,@salary,@password)", dbcon.connect());
+                        cm.Parameters.AddWithValue("@name", txtName.Text);
+                        cm.Parameters.AddWithValue("@phone", txtPhone.Text);
+                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cm.Parameters.AddWithValue("@dob", dtDob.Value);
+                        cm.Parameters.AddWithValue("@gender", rdMale.Checked ? "Male" : "Female");//like if condition
+                        cm.Parameters.AddWithValue("@role", cbRole.Text);
+                        cm.Parameters.AddWithValue("@salary", txtSalary.Text);
+                        cm.Parameters.AddWithValue("@password", txtPassword.Text);
 
-                    dbcon.open();// to open connection
-                    cm.ExecuteNonQuery();
-                    dbcon.close();// to close connection
-                    MessageBox.Show("Employer has been successfully registered!", title);
-                    check = false;
-                    Clear();//to clear data field, after data inserted into the database                        
-                    //employer.loadEmployer(); // refresh the employer list after insert data in the table
+                        dbcon.open();// to open connection
+                        cm.ExecuteNonQuery();
+                        dbcon.close();// to close connection
+                        MessageBox.Show("Employer has been successfully registered!", title);
+                        check = false;
+                        Clear();//to clear data field, after data inserted into the database                        
+                                //employer.loadEmployer(); // refresh the employer list after insert data in the table
+                        check = false;
+                    }
                 }
             }
             catch (Exception ex) 
@@ -64,7 +71,38 @@ namespace Car_Wash_Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                checkField();
+                if (check)
+                {
+                    if (MessageBox.Show("Are you sure you want to edit this record ?", "Employer Editing", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cm = new SqlCommand("UPDATE tbEmployer SET name=@name, phone=@phone, address=@address, dob=@dob, gender=@gender, role=@role, salary=@salary, password=@password WHERE id=@id", dbcon.connect());
+                        cm.Parameters.AddWithValue("@id", lblEid.Text);
+                        cm.Parameters.AddWithValue("@name", txtName.Text);
+                        cm.Parameters.AddWithValue("@phone", txtPhone.Text);
+                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cm.Parameters.AddWithValue("@dob", dtDob.Value);
+                        cm.Parameters.AddWithValue("@gender", rdMale.Checked ? "Male" : "Female");//like if condition
+                        cm.Parameters.AddWithValue("@role", cbRole.Text);
+                        cm.Parameters.AddWithValue("@salary", txtSalary.Text);
+                        cm.Parameters.AddWithValue("@password", txtPassword.Text);
 
+                        dbcon.open();// to open connection
+                        cm.ExecuteNonQuery();
+                        dbcon.close();// to close connection
+                        MessageBox.Show("Employer has been successfully registered!", title);
+                        Clear();//to clear data field, after data inserted into the database
+                        this.Dispose();
+                        employer.loadEmployer();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title);
+            }
         }
 
         //click cancel button clear all fileds
@@ -74,6 +112,21 @@ namespace Car_Wash_Management_System
             btnUpdate.Enabled = false;
             btnSave.Enabled = true;
         }
+
+        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // only allow digit number
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal 
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
         // to create a function for clear all field
         #region method
         public void Clear()
@@ -116,5 +169,6 @@ namespace Car_Wash_Management_System
 
         #endregion method
 
+        
     }
 }

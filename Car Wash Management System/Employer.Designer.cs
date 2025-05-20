@@ -45,9 +45,9 @@
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployer)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,6 @@
             // 
             this.dgvEmployer.AllowUserToAddRows = false;
             this.dgvEmployer.AllowUserToDeleteRows = false;
-            this.dgvEmployer.AllowUserToOrderColumns = true;
             this.dgvEmployer.AllowUserToResizeColumns = false;
             this.dgvEmployer.AllowUserToResizeRows = false;
             this.dgvEmployer.BackgroundColor = System.Drawing.Color.White;
@@ -93,6 +92,7 @@
             this.dgvEmployer.RowTemplate.Height = 24;
             this.dgvEmployer.Size = new System.Drawing.Size(967, 410);
             this.dgvEmployer.TabIndex = 0;
+            this.dgvEmployer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployer_CellContentClick);
             // 
             // Column1
             // 
@@ -207,23 +207,6 @@
             this.panel1.Size = new System.Drawing.Size(967, 75);
             this.panel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search ";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(73, 28);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(164, 23);
-            this.txtSearch.TabIndex = 1;
-            // 
             // btnAdd
             // 
             this.btnAdd.FlatAppearance.BorderSize = 0;
@@ -234,6 +217,25 @@
             this.btnAdd.Size = new System.Drawing.Size(55, 55);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(73, 28);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(164, 23);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Search ";
             // 
             // Employer
             // 
