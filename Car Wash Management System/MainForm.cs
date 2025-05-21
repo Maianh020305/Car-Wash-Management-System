@@ -33,6 +33,7 @@ namespace Car_Wash_Management_System
         {
             panelSlide.Height = btnCustomer.Height;
             panelSlide.Top = btnCustomer.Top;
+            openChildForm(new Customer());
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -83,5 +84,10 @@ namespace Car_Wash_Management_System
             childForm.Show();
         }
         #endregion method
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -276,7 +276,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(62, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 37);
+            this.label1.Size = new System.Drawing.Size(155, 43);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhóm 5";
             // 
@@ -292,10 +292,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel4.Controls.Add(this.panelChild);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.panelChild);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(200, 0);
             this.panel4.Name = "panel4";
@@ -332,7 +332,7 @@
             this.label9.ForeColor = System.Drawing.Color.Gray;
             this.label9.Location = new System.Drawing.Point(39, 79);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 18);
+            this.label9.Size = new System.Drawing.Size(154, 22);
             this.label9.TabIndex = 3;
             this.label9.Text = "Since last 7 days";
             // 
@@ -363,7 +363,7 @@
             this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.Location = new System.Drawing.Point(-1, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 22);
+            this.label10.Size = new System.Drawing.Size(158, 26);
             this.label10.TabIndex = 0;
             this.label10.Text = "GROSS PROFIT";
             // 
@@ -397,7 +397,7 @@
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(39, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 18);
+            this.label6.Size = new System.Drawing.Size(154, 22);
             this.label6.TabIndex = 3;
             this.label6.Text = "Since last 7 days";
             // 
@@ -428,7 +428,7 @@
             this.label7.ForeColor = System.Drawing.Color.Gray;
             this.label7.Location = new System.Drawing.Point(-1, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(207, 22);
+            this.label7.Size = new System.Drawing.Size(248, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "COST OF GOODS SOLD";
             // 
@@ -462,7 +462,7 @@
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(39, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 18);
+            this.label3.Size = new System.Drawing.Size(154, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Since last 7 days";
             // 
@@ -493,20 +493,22 @@
             this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(-1, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 22);
+            this.label2.Size = new System.Drawing.Size(103, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "REVENUS";
             // 
             // panelChild
             // 
-            this.panelChild.Location = new System.Drawing.Point(50, 257);
+            this.panelChild.BackColor = System.Drawing.Color.White;
+            this.panelChild.Location = new System.Drawing.Point(54, 236);
             this.panelChild.Name = "panelChild";
-            this.panelChild.Size = new System.Drawing.Size(962, 493);
-            this.panelChild.TabIndex = 0;
+            this.panelChild.Size = new System.Drawing.Size(967, 496);
+            this.panelChild.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1262, 773);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -514,6 +516,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainForm";
             this.Text = "Car Wash Management System";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -544,7 +547,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panelChild;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnReport;
@@ -574,6 +576,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelChild;
     }
 }
 

@@ -79,8 +79,38 @@ namespace Car_Wash_Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                checkField();
+                if (check)
+                {
+                    if (MessageBox.Show("Bạn có chắc chắn muốn cập nhật thông tin khách hàng?", "Cập nhật thông tin khách hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cm = new SqlCommand("UPDATE tbCustomer SET vid=@vid, name=@name, phone=@phone, carno=@carno, carmodel=@carmodel, address=@address, points=@points WHERE id=@id", dbcon.connect());
+                        cm.Parameters.AddWithValue("@id", lblCid.Text);
+                        cm.Parameters.AddWithValue("@vid", cbCarType.SelectedValue);// to save id number of vehicle type
+                        cm.Parameters.AddWithValue("@name", txtName.Text);
+                        cm.Parameters.AddWithValue("@phone", txtPhone.Text);
+                        cm.Parameters.AddWithValue("@carno", txtCarNo.Text);
+                        cm.Parameters.AddWithValue("@carmodel", txtCarModel.Text);
+                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cm.Parameters.AddWithValue("@points", udPoints.Text);
 
+                        dbcon.open();// to open connection
+                        cm.ExecuteNonQuery();
+                        dbcon.close();// to close connection
+                        MessageBox.Show("Thông tin khách hàng đã được cập nhật thành công!", title);
+                        this.Dispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, title);
+            }
         }
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

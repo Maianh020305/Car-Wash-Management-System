@@ -111,5 +111,10 @@ namespace Car_Wash_Management_System
             return i;
         }
         #endregion method
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadCustomer();
+        }
     }
 }
