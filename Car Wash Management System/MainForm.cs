@@ -57,12 +57,31 @@ namespace Car_Wash_Management_System
         {
             panelSlide.Height = btnSetting.Height;
             panelSlide.Top = btnSetting.Top;
+            openChildForm(new Setting());
         }
-
+        //phải employer mới đúng
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             panelSlide.Height = btnEmployee.Height;
             panelSlide.Top = btnEmployee.Top;
+            openChildForm(new Employer());
         }
+
+        #region method
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChild.Controls.Add(childForm);
+            panelChild.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        #endregion method
     }
 }

@@ -38,8 +38,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblEid = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblVid = new System.Windows.Forms.Label();
+            this.cbClass = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -52,10 +52,11 @@
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.TabIndex = 28;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(169, 119);
+            this.txtName.Location = new System.Drawing.Point(172, 112);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(511, 30);
             this.txtName.TabIndex = 27;
@@ -63,11 +64,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 128);
+            this.label2.Location = new System.Drawing.Point(27, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 21);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Full Name: ";
+            this.label2.Text = "Full Name :";
             // 
             // label1
             // 
@@ -101,6 +102,7 @@
             this.btnUpdate.TabIndex = 33;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
@@ -114,6 +116,7 @@
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancel ";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -127,44 +130,50 @@
             this.btnSave.TabIndex = 31;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 188);
+            this.label9.Location = new System.Drawing.Point(27, 181);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 21);
+            this.label9.Size = new System.Drawing.Size(64, 21);
             this.label9.TabIndex = 30;
-            this.label9.Text = "Password: ";
+            this.label9.Text = "Class :";
             // 
-            // lblEid
+            // lblVid
             // 
-            this.lblEid.AutoSize = true;
-            this.lblEid.Location = new System.Drawing.Point(24, 236);
-            this.lblEid.Name = "lblEid";
-            this.lblEid.Size = new System.Drawing.Size(35, 21);
-            this.lblEid.TabIndex = 29;
-            this.lblEid.Text = "Eid";
-            this.lblEid.Visible = false;
+            this.lblVid.AutoSize = true;
+            this.lblVid.Location = new System.Drawing.Point(24, 236);
+            this.lblVid.Name = "lblVid";
+            this.lblVid.Size = new System.Drawing.Size(40, 21);
+            this.lblVid.TabIndex = 29;
+            this.lblVid.Text = "Vid";
+            this.lblVid.Visible = false;
             // 
-            // comboBox1
+            // cbClass
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(169, 180);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(511, 29);
-            this.comboBox1.TabIndex = 34;
+            this.cbClass.FormattingEnabled = true;
+            this.cbClass.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbClass.Location = new System.Drawing.Point(172, 173);
+            this.cbClass.Name = "cbClass";
+            this.cbClass.Size = new System.Drawing.Size(511, 29);
+            this.cbClass.TabIndex = 34;
             // 
             // ManageVehicleType
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(708, 280);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbClass);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.lblEid);
+            this.Controls.Add(this.lblVid);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
@@ -190,7 +199,7 @@
         public System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.Label lblEid;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.Label lblVid;
+        public System.Windows.Forms.ComboBox cbClass;
     }
 }
