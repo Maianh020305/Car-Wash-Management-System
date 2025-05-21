@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Car_Wash_Management_System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Car_Wash_Management_System
 {
@@ -19,6 +20,14 @@ namespace Car_Wash_Management_System
         string title = "Car Wash Management System";
         public int customerId = 0, vehicleTypeId = 0;
         public string carno, carmodel;
+        MainForm main;
+        public Cash(MainForm mainForm)
+        {
+            InitializeComponent();
+            getTransno();
+            loadCash();
+            main = mainForm;
+        }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
@@ -28,22 +37,18 @@ namespace Car_Wash_Management_System
 
         private void btnAddService_Click(object sender, EventArgs e)
         {
-    
+            openChildForm(new CashService(this));
+            btnAddCustomer.Enabled = false;
         }
 
-        private void btnCash_Click(object sender, EventArgs e)
-        {
-            
-        }
+        //private void btnCash_Click(object sender, EventArgs e)
+        //{
+           // SettlePayment module = new SettlePayment(this);
+            //module.txtSale.Text = lblTotal.Text;
+            //module.ShowDialog();
+            //main.loadGrossProfit();
+       // }
 
-        MainForm main;
-        public Cash(MainForm mainForm)
-        {
-            InitializeComponent();
-            getTransno();
-            loadCash();
-            main = mainForm;
-        }
         #region method
         // create a function any form to the panelChild on the mainform
 
@@ -129,41 +134,6 @@ namespace Car_Wash_Management_System
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelCash_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTransno_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Cash_Load(object sender, EventArgs e)
         {
         }
@@ -194,4 +164,5 @@ namespace Car_Wash_Management_System
         }
         #endregion method
     }
+
 }

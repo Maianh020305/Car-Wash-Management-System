@@ -40,12 +40,14 @@ namespace Car_Wash_Management_System
         {
             panelSlide.Height = btnService.Height;
             panelSlide.Top = btnService.Top;
+            openChildForm(new Service());
         }
 
         private void btnCash_Click(object sender, EventArgs e)
         {
             panelSlide.Height = btnCash.Height;
             panelSlide.Top = btnCash.Top;
+            openChildForm(new Cash(this));
         }
 
         private void btnReport_Click(object sender, EventArgs e)
