@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cash));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +73,8 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column4.HeaderText = "Giá";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
@@ -83,8 +83,8 @@
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column8.HeaderText = "Dịch vụ";
             this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
@@ -120,7 +120,7 @@
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
             this.Column5.Visible = false;
-            this.Column5.Width = 102;
+            this.Column5.Width = 103;
             // 
             // lblTotal
             // 
@@ -192,6 +192,7 @@
             this.btnCash.Text = "Thanh toán";
             this.btnCash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // Column1
             // 
@@ -208,7 +209,7 @@
             this.Column9.MinimumWidth = 8;
             this.Column9.Name = "Column9";
             this.Column9.Visible = false;
-            this.Column9.Width = 109;
+            this.Column9.Width = 102;
             // 
             // panel4
             // 
@@ -255,6 +256,7 @@
             this.btnAddService.Text = "Dịch vụ";
             this.btnAddService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddService.UseVisualStyleBackColor = true;
+            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
             // 
             // btnAddCustomer
             // 
@@ -269,6 +271,7 @@
             this.btnAddCustomer.Text = "       Khách hàng";
             this.btnAddCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // panel1
             // 
@@ -287,7 +290,7 @@
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.Visible = false;
-            this.Column2.Width = 71;
+            this.Column2.Width = 74;
             // 
             // dgvCash
             // 
@@ -297,14 +300,14 @@
             this.dgvCash.AllowUserToResizeRows = false;
             this.dgvCash.BackgroundColor = System.Drawing.Color.White;
             this.dgvCash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(205)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(205)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCash.ColumnHeadersHeight = 35;
             this.dgvCash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCash.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
