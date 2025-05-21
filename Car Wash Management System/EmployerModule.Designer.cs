@@ -38,7 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblEid = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblPass = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -139,14 +139,14 @@
             this.lblEid.Text = "Eid";
             this.lblEid.Visible = false;
             // 
-            // label9
+            // lblPass
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 361);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 21);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Password: ";
+            this.lblPass.AutoSize = true;
+            this.lblPass.Location = new System.Drawing.Point(21, 361);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(100, 21);
+            this.lblPass.TabIndex = 9;
+            this.lblPass.Text = "Password: ";
             // 
             // label10
             // 
@@ -259,6 +259,7 @@
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(511, 29);
             this.cbRole.TabIndex = 20;
+            this.cbRole.SelectedIndexChanged += new System.EventHandler(this.cbRole_SelectedIndexChanged);
             // 
             // rdMale
             // 
@@ -312,7 +313,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblEid);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -342,7 +343,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.Button btnCancel;

@@ -126,7 +126,22 @@ namespace Car_Wash_Management_System
                 e.Handled = true;
             }
         }
-
+        private void cbRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRole.Text == "Supervisor" || cbRole.Text == "Worker")
+            {
+                this.Height = 453 - 30;
+                txtPassword.Clear();
+                lblPass.Visible = false;// to hide password label and textbox
+                txtPassword.Visible = false;
+            }
+            else
+            {
+                lblPass.Visible = true;
+                txtPassword.Visible = true;
+                this.Height = 453;
+            }
+        }
         // to create a function for clear all field
         #region method
         public void Clear()
@@ -167,8 +182,9 @@ namespace Car_Wash_Management_System
             return age;
         }
 
+
         #endregion method
 
-        
+
     }
 }
