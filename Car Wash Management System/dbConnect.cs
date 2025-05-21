@@ -11,7 +11,7 @@ namespace Car_Wash_Management_System
     //to get connection string between application and database 
     class dbConnect
     {
-        private SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\New folder\Car Wash Management System\DBCarWash.mdf"";Integrated Security=True;Connect Timeout=30");
+        private SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Ngan\source\repos\Car-Wash-Management-System\Car Wash Management System\DBCarWash.mdf"";Integrated Security=True");
         SqlCommand cm = new SqlCommand();
         public SqlConnection connect()
         {
