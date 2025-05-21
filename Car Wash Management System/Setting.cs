@@ -22,7 +22,8 @@ namespace Car_Wash_Management_System
         {
             InitializeComponent();
             loadVehicleType();
-
+            loadCostofGood();
+            loadCompany();
         }
 
         #region VehicleType
@@ -115,7 +116,7 @@ namespace Car_Wash_Management_System
             loadCostofGood();
 
         }
-
+        //Cost of good sold mới đúng
         private void dgvControlGoodSold_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvCostofGoodSold.Columns[e.ColumnIndex].Name;

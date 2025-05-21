@@ -78,7 +78,7 @@ namespace Car_Wash_Management_System
                     cm.ExecuteNonQuery();
                     dbcon.close();// to close connection
                     MessageBox.Show("Vehicle type has been successfully Edited!", title);
-                    Clear();//to clear data field, after data inserted into the database                                           
+                    Clear();//to clear data field, after data inserted into the database
                     this.Dispose();
                 }
             }
