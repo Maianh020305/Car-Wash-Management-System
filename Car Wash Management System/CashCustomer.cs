@@ -24,18 +24,7 @@ namespace Car_Wash_Management_System
             loadCustomer();
         }
 
-        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = dgvCustomer.Columns[e.ColumnIndex].Name;
-            if (colName == "Select")
-            {
-                cash.customerId = int.Parse(dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString());
-                cash.vehicleTypeId = int.Parse(dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString());
-            }
-            else return;
-            this.Dispose();
-            cash.panelCash.Height = 1;
-        }
+      
         #region method
         // create function for load customer
         public void loadCustomer()
@@ -62,12 +51,20 @@ namespace Car_Wash_Management_System
         }
         #endregion method
 
-        private void btnCash_Click(object sender, EventArgs e)
+        private void dgvCustomer_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-          
+            string colName = dgvCustomer.Columns[e.ColumnIndex].Name;
+            if (colName == "Select")
+            {
+                cash.customerId = int.Parse(dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString());
+                cash.vehicleTypeId = int.Parse(dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString());
+            }
+            else return;
+            this.Dispose();
+            cash.panelCash.Height = 1;
         }
 
-        private void textSearch_TextChanged(object sender, EventArgs e)
+        private void textSearch_TextChanged_1(object sender, EventArgs e)
         {
             loadCustomer();
         }

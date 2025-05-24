@@ -23,19 +23,46 @@ namespace Car_Wash_Management_System
             loadEmployer();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        #region method
+        //query employer list data form the database to the datagridview 
+        public void loadEmployer()
+        {
+            try
+            {
+                int i = 0; // to show number for employer list
+                dgvEmployer.Rows.Clear();
+                cm = new SqlCommand("SELECT * FROM tbEmployer WHERE CONCAT (name,address,role) LIKE '%" + txtSearch.Text + "%'", dbcon.connect());
+                dbcon.open();
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i++;
+                    // to add data to the datagridview from the database
+                    dgvEmployer.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), DateTime.Parse(dr[4].ToString()).ToShortDateString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
+                }
+                dbcon.close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title);
+            }
+        }
+
+        #endregion method
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             EmployerModule module = new EmployerModule(this);
             module.btnUpdate.Enabled = false;// this is for save not for update
             module.ShowDialog();
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
             loadEmployer();
         }
 
-        private void dgvEmployer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEmployer_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvEmployer.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
@@ -74,32 +101,5 @@ namespace Car_Wash_Management_System
                 }
             }
         }
-        #region method
-        //query employer list data form the database to the datagridview 
-        public void loadEmployer()
-        {
-            try
-            {
-                int i = 0; // to show number for employer list
-                dgvEmployer.Rows.Clear();
-                cm = new SqlCommand("SELECT * FROM tbEmployer WHERE CONCAT (name,address,role) LIKE '%" + txtSearch.Text + "%'", dbcon.connect());
-                dbcon.open();
-                dr = cm.ExecuteReader();
-                while (dr.Read())
-                {
-                    i++;
-                    // to add data to the datagridview from the database
-                    dgvEmployer.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), DateTime.Parse(dr[4].ToString()).ToShortDateString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
-                }
-                dbcon.close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, title);
-            }
-        }
-        #endregion method
-
-       
     }
 }

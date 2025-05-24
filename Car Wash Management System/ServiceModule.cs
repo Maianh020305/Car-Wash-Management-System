@@ -23,25 +23,6 @@ namespace Car_Wash_Management_System
             InitializeComponent();
             service = ser;
         }
-        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // only allow digit number
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            // only allow one decimal 
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void ServiceModule_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -120,5 +101,6 @@ namespace Car_Wash_Management_System
 
         }
         #endregion method
+    
     }
 }

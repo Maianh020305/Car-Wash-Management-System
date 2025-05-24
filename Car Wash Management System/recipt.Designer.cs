@@ -29,39 +29,30 @@
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "ReportViewer";
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(345, 442);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // reportViewer2
-            // 
-            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer2.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer2.Name = "reportViewer1";
-            this.reportViewer2.Size = new System.Drawing.Size(360, 495);
-            this.reportViewer2.TabIndex = 0;
             // 
             // recipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 450);
+            this.ClientSize = new System.Drawing.Size(338, 439);
+            this.Controls.Add(this.reportViewer1);
             this.Name = "recipt";
             this.Text = "recipt";
-            this.Load += new System.EventHandler(this.recipt_Load);
+            this.Load += new System.EventHandler(this.recipt_Load_1);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
     }
 }

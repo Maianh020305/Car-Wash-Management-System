@@ -22,20 +22,45 @@ namespace Car_Wash_Management_System
             InitializeComponent();
             loadService();
         }
+        #region method
+        public void loadService()
+        {
+            try
+            {
+                int i = 0; // to show number for service list
+                dgvService.Rows.Clear();
+                cm = new SqlCommand("SELECT * FROM tbService WHERE name LIKE '%" + txtSearch.Text + "%'", dbcon.connect());
+                dbcon.open();
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i++;
+                    // to add data to the datagridview from the database
+                    dgvService.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
+                }
+                dbcon.close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title);
+            }
+        }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        #endregion method
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            loadService();
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             ServiceModule module = new ServiceModule(this);
             module.btnUpdate.Enabled = true;
             module.ShowDialog();
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            loadService();
-        }
-
-        private void dgvService_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvService_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvService.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
@@ -70,30 +95,5 @@ namespace Car_Wash_Management_System
             }
             loadService();// to reload the service list after update the record
         }
-        #region method
-        public void loadService()
-        {
-            try
-            {
-                int i = 0; // to show number for service list
-                dgvService.Rows.Clear();
-                cm = new SqlCommand("SELECT * FROM tbService WHERE name LIKE '%" + txtSearch.Text + "%'", dbcon.connect());
-                dbcon.open();
-                dr = cm.ExecuteReader();
-                while (dr.Read())
-                {
-                    i++;
-                    // to add data to the datagridview from the database
-                    dgvService.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
-                }
-                dbcon.close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, title);
-            }
-        }
-
-        #endregion method
     }
 }

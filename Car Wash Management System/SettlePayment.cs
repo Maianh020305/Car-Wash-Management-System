@@ -108,9 +108,9 @@ namespace Car_Wash_Management_System
                         dbcon.executeQuery("UPDATE tbCustomer SET points += " + 1 + " WHERE id='" + cash.customerId + "'");
                     }
 
-                    //receipt module = new receipt(cash);
-                //    module.loadReceipt(txtCash.Text, txtChange.Text);
-                   // module.ShowDialog();
+                    recipt module = new recipt(cash);
+                    module.loadReceipt(txtCash.Text, txtChange.Text);
+                    module.ShowDialog();
 
 
                     MessageBox.Show("Payment successfully saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);

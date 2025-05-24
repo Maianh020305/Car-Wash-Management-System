@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashCustomer));
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,14 +57,14 @@
             this.dgvCustomer.AllowUserToResizeRows = false;
             this.dgvCustomer.BackgroundColor = System.Drawing.Color.White;
             this.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(205)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCustomer.ColumnHeadersHeight = 35;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -86,7 +86,7 @@
             this.dgvCustomer.RowHeadersWidth = 62;
             this.dgvCustomer.Size = new System.Drawing.Size(976, 129);
             this.dgvCustomer.TabIndex = 6;
-            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
+            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick_1);
             // 
             // Column1
             // 
@@ -155,8 +155,8 @@
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column8.HeaderText = "Điểm thưởng";
             this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
@@ -185,12 +185,12 @@
             // 
             this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textSearch.Location = new System.Drawing.Point(129, 3);
+            this.textSearch.Location = new System.Drawing.Point(145, 3);
             this.textSearch.Multiline = true;
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(847, 29);
+            this.textSearch.Size = new System.Drawing.Size(831, 29);
             this.textSearch.TabIndex = 9;
-            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged_1);
             // 
             // btnCash
             // 
@@ -198,17 +198,17 @@
             this.btnCash.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCash.FlatAppearance.BorderSize = 0;
             this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCash.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCash.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnCash.Image = ((System.Drawing.Image)(resources.GetObject("btnCash.Image")));
             this.btnCash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCash.Location = new System.Drawing.Point(0, 0);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(129, 32);
+            this.btnCash.Size = new System.Drawing.Size(145, 32);
             this.btnCash.TabIndex = 8;
             this.btnCash.Text = "Tìm kiếm";
             this.btnCash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCash.UseVisualStyleBackColor = false;
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // CashCustomer
             // 

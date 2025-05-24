@@ -27,10 +27,7 @@ namespace Car_Wash_Management_System
             cash = cashform;
             loadCompany();
         }
-        private void recipt_Load(object sender, EventArgs e)
-        {
-            this.reportViewer1.RefreshReport();
-        }
+
         public void loadCompany()
         {
             cm = new SqlCommand("SELECT * FROM tbCompany", dbcon.connect());
@@ -46,12 +43,18 @@ namespace Car_Wash_Management_System
             dbcon.close();
         }
 
+        private void recipt_Load_1(object sender, EventArgs e)
+        {
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+        }
+
         public void loadReceipt(string pcash, string pchange)
         {
             ReportDataSource rptDataSource;
             try
             {
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptReceipt.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Report\Report1.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();

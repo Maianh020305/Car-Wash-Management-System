@@ -251,6 +251,7 @@
             // txtCash
             // 
             this.txtCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.txtCash.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.txtCash.Location = new System.Drawing.Point(12, 97);
             this.txtCash.Multiline = true;
             this.txtCash.Name = "txtCash";

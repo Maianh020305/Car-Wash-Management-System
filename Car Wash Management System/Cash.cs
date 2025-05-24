@@ -37,26 +37,18 @@ namespace Car_Wash_Management_System
 
         private void btnAddService_Click(object sender, EventArgs e)
         {
-        //    openChildForm(new CashService(this));
+           openChildForm(new CashService(this));
             btnAddCustomer.Enabled = false;
         }
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-          //  SettlePayment module = new SettlePayment(this);
-          //  module.txtSale.Text = lblTotal.Text;
-        //    module.ShowDialog();
-           // main.loadGrossProfit();
+          SettlePayment module = new SettlePayment(this);
+            module.txtSale.Text = lblTotal.Text;
+            module.ShowDialog();
+           main.loadGrossProfit();
         }
 
-     //   MainForm main;
-        //public Cash(MainForm mainForm)
-        //{
-        //    InitializeComponent();
-        //    getTransno();
-        //    loadCash();
-         //   main = mainForm;
-     //   }
         #region method
         // create a function any form to the panelChild on the mainform
 
@@ -138,11 +130,6 @@ namespace Car_Wash_Management_System
         }
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

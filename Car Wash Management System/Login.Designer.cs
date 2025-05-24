@@ -62,9 +62,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(75, 64);
+            this.panel1.Location = new System.Drawing.Point(79, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(906, 493);
+            this.panel1.Size = new System.Drawing.Size(930, 508);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -84,9 +84,9 @@
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAddress.Location = new System.Drawing.Point(450, 469);
+            this.lblAddress.Location = new System.Drawing.Point(464, 463);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(369, 21);
+            this.lblAddress.Size = new System.Drawing.Size(369, 30);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "Binh Tan, Ho Chi Minh City";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,7 +94,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(821, 403);
+            this.pictureBox2.Location = new System.Drawing.Point(839, 415);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(88, 93);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,9 +105,9 @@
             // 
             this.lblCompany.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompany.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblCompany.Location = new System.Drawing.Point(429, 422);
+            this.lblCompany.Location = new System.Drawing.Point(443, 390);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(390, 47);
+            this.lblCompany.Size = new System.Drawing.Size(390, 73);
             this.lblCompany.TabIndex = 6;
             this.lblCompany.Text = "Happy Wash";
             this.lblCompany.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,9 +118,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.Location = new System.Drawing.Point(714, 311);
+            this.btnCancel.Location = new System.Drawing.Point(768, 311);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(109, 42);
+            this.btnCancel.Size = new System.Drawing.Size(109, 54);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -132,9 +132,9 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(585, 311);
+            this.btnLogin.Location = new System.Drawing.Point(585, 310);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(109, 42);
+            this.btnLogin.Size = new System.Drawing.Size(157, 55);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -155,17 +155,19 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(585, 229);
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(585, 228);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(292, 26);
+            this.txtPassword.Size = new System.Drawing.Size(292, 34);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(585, 194);
+            this.txtName.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(585, 189);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(292, 26);
+            this.txtName.Size = new System.Drawing.Size(292, 34);
             this.txtName.TabIndex = 0;
             // 
             // label3
@@ -186,7 +188,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(571, 109);
+            this.label1.Location = new System.Drawing.Point(440, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(479, 96);
             this.label1.TabIndex = 1;
@@ -198,7 +200,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(427, 493);
+            this.pictureBox1.Size = new System.Drawing.Size(427, 508);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

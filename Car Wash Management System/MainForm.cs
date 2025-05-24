@@ -15,8 +15,13 @@ namespace Car_Wash_Management_System
         public MainForm()
         {
             InitializeComponent();
-          //  loadGrossProfit();
+            loadGrossProfit();
             openChildForm(new Dashboard());
+        }
+
+ 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
 
         }
 
@@ -27,16 +32,11 @@ namespace Car_Wash_Management_System
             openChildForm(new Dashboard());
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnEmployer_Click(object sender, EventArgs e)
         {
-                panelSlide.Height = btnLogout.Height;
-            panelSlide.Top = btnLogout.Top;
-            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
-            }
+            panelSlide.Height = btnEmployer.Height;
+            panelSlide.Top = btnEmployer.Top;
+            openChildForm(new Employer());
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -53,18 +53,18 @@ namespace Car_Wash_Management_System
             openChildForm(new Service());
         }
 
-        private void btnCash_Click(object sender, EventArgs e)
+        private void btncash_Click(object sender, EventArgs e)
         {
-           // panelSlide.Height = btncash.Height;
-        //    panelSlide.Top = btncash.Top;
-            //openChildForm(new Cash(this));
+            panelSlide.Height = btncash.Height;
+            panelSlide.Top = btncash.Top;
+            openChildForm(new Cash(this));
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             panelSlide.Height = btnReport.Height;
             panelSlide.Top = btnReport.Top;
-         //   openChildForm(new Report());
+            openChildForm(new Report());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -73,15 +73,21 @@ namespace Car_Wash_Management_System
             panelSlide.Top = btnSetting.Top;
             openChildForm(new Setting());
         }
-        //phải employer mới đúng
-        private void btnEmployee_Click(object sender, EventArgs e)
-        {
-            panelSlide.Height = btnEmployee.Height;
-            panelSlide.Top = btnEmployee.Top;
-            openChildForm(new Employer());
-        }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            panelSlide.Height = btnLogout.Height;
+            panelSlide.Top = btnLogout.Top;
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+        }
         #region method
+        // create a function any form to the panelChild on the mainform
+
         private Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -96,11 +102,37 @@ namespace Car_Wash_Management_System
             childForm.BringToFront();
             childForm.Show();
         }
-        #endregion method
 
-        private void MainForm_Load(object sender, EventArgs e)
+        // to extract data for dashboard
+        // to show only seven day
+        public void loadGrossProfit()
         {
+            Report module = new Report();
+            lblRevenus.Text = module.extractData("SELECT ISNULL(SUM(price),0) AS total FROM tbCash WHERE date >'" + DateTime.Now.AddDays(-7) + "' AND status LIKE 'Sold' ").ToString("#,##0.00");
+            lblCostofGood.Text = module.extractData("SELECT ISNULL(SUM(cost),0) AS Cost FROM tbCostofGood WHERE date > '" + DateTime.Now.AddDays(-7) + "'").ToString("#,##0.00");
+            lblGrossProfit.Text = (double.Parse(lblRevenus.Text) - double.Parse(lblCostofGood.Text)).ToString("#,##0.00");
 
+            double revlast7 = module.extractData("SELECT ISNULL(SUM(price),0) AS total FROM tbCash WHERE date BETWEEN '" + DateTime.Now.AddDays(-14) + "' AND '" + DateTime.Now.AddDays(-7) + "' AND status LIKE 'Sold' ");
+            double coglast7 = module.extractData("SELECT ISNULL(SUM(cost),0) AS Cost FROM tbCostofGood WHERE date BETWEEN  '" + DateTime.Now.AddDays(-14) + "' AND '" + DateTime.Now.AddDays(-7) + "'");
+            double gplast7 = revlast7 - coglast7;
+
+
+            //if (revlast7 > double.Parse(lblRevenus.Text))
+            //    picRevenus.Image = Properties.Resources.down_25px;
+            //else
+            //    picRevenus.Image = Properties.Resources.up_25px;
+
+            //if (gplast7 > double.Parse(lblGrossProfit.Text))
+            //{
+            //    picGrossProfit.Image = Properties.Resources.down_25px;
+            //    lblGrossProfit.ForeColor = Color.Red;
+            //}
+            //else
+            //{
+            //    picGrossProfit.Image = Properties.Resources.up_25px;
+            //    lblGrossProfit.ForeColor = Color.Green;
+            }
         }
+        #endregion method
     }
-}
+

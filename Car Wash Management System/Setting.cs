@@ -30,38 +30,7 @@ namespace Car_Wash_Management_System
 
         private void dgvVehicleType_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string colName = dgvVehicleType.Columns[e.ColumnIndex].Name;
-            if (colName == "Edit")
-            {
-                //to sent vehicle data to the vehicle module 
-                ManageVehicleType module = new ManageVehicleType(this);
-                module.lblVid.Text = dgvVehicleType.Rows[e.RowIndex].Cells[1].Value.ToString();
-                module.txtName.Text = dgvVehicleType.Rows[e.RowIndex].Cells[2].Value.ToString();
-                module.cbClass.Text = dgvVehicleType.Rows[e.RowIndex].Cells[3].Value.ToString();
 
-
-                module.btnSave.Enabled = false;
-                module.ShowDialog();
-            }
-            else if (colName == "Delete") // if you want to delete the record to click the delete icon on the datagridview
-            {
-                try
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        cm = new SqlCommand("DELETE FROM tbVehicleType WHERE id LIKE'" + dgvVehicleType.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", dbcon.connect());
-                        dbcon.open();
-                        cm.ExecuteNonQuery();
-                        dbcon.close();
-                        MessageBox.Show("Vehicle type data has been successfully removed!", title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, title);
-                }
-            }
-            loadVehicleType();
         }
 
 
@@ -211,7 +180,8 @@ namespace Car_Wash_Management_System
             #endregion CompanyName
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+ 
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -235,15 +205,10 @@ namespace Car_Wash_Management_System
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            txtComName.Clear();
+              txtComName.Clear();
             txtComAddress.Clear();
-        }
-
-        private void txtSearchVT_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
