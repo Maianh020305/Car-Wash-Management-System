@@ -15,18 +15,28 @@ namespace Car_Wash_Management_System
         public MainForm()
         {
             InitializeComponent();
+            loadGrossProfit();
+            openChildForm(new Dashboard());
+
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             panelSlide.Height = btnDashboard.Height;
             panelSlide.Top = btnDashboard.Top;
+            openChildForm(new Dashboard());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             panelSlide.Height = btnLogout.Height;
             panelSlide.Top = btnLogout.Top;
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -40,18 +50,21 @@ namespace Car_Wash_Management_System
         {
             panelSlide.Height = btnService.Height;
             panelSlide.Top = btnService.Top;
+            openChildForm(new Service());
         }
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            panelSlide.Height = btnCash.Height;
-            panelSlide.Top = btnCash.Top;
+            panelSlide.Height = btncash.Height;
+            panelSlide.Top = btncash.Top;
+            openChildForm(new Cash(this));
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             panelSlide.Height = btnReport.Height;
             panelSlide.Top = btnReport.Top;
+            openChildForm(new Report());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
