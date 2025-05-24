@@ -369,7 +369,7 @@ namespace Car_Wash_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtReceiptRow AdddtReceiptRow(string name, string price) {
+            public dtReceiptRow AdddtReceiptRow(string name, decimal price) {
                 dtReceiptRow rowdtReceiptRow = ((dtReceiptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         name,
@@ -405,7 +405,7 @@ namespace Car_Wash_Management_System {
             private void InitClass() {
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnprice = new global::System.Data.DataColumn("price", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnprice = new global::System.Data.DataColumn("price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprice);
             }
             
@@ -565,10 +565,10 @@ namespace Car_Wash_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string price {
+            public decimal price {
                 get {
                     try {
-                        return ((string)(this[this.tabledtReceipt.priceColumn]));
+                        return ((decimal)(this[this.tabledtReceipt.priceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'price\' in table \'dtReceipt\' is DBNull.", e);
