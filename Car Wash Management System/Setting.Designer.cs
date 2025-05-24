@@ -240,10 +240,10 @@
             // 
             this.tabPage2.Controls.Add(this.dgvCostofGoodSold);
             this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(941, 370);
+            this.tabPage2.Size = new System.Drawing.Size(941, 365);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost of Good Sold";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -281,7 +281,7 @@
             this.dgvCostofGoodSold.RowHeadersVisible = false;
             this.dgvCostofGoodSold.RowHeadersWidth = 51;
             this.dgvCostofGoodSold.RowTemplate.Height = 24;
-            this.dgvCostofGoodSold.Size = new System.Drawing.Size(935, 289);
+            this.dgvCostofGoodSold.Size = new System.Drawing.Size(935, 284);
             this.dgvCostofGoodSold.TabIndex = 4;
             this.dgvCostofGoodSold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvControlGoodSold_CellContentClick);
             // 
@@ -353,7 +353,7 @@
             this.panel3.Controls.Add(this.txtSearchCoG);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 292);
+            this.panel3.Location = new System.Drawing.Point(3, 287);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(935, 75);
             this.panel3.TabIndex = 3;
@@ -396,9 +396,9 @@
             this.tabPage3.Controls.Add(this.txtComName);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(941, 370);
+            this.tabPage3.Size = new System.Drawing.Size(941, 365);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Company Name";
             this.tabPage3.UseVisualStyleBackColor = true;
