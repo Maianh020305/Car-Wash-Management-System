@@ -64,6 +64,11 @@ namespace Car_Wash_Management_System
 
         private void btnCash_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
             loadCustomer();
         }
     }

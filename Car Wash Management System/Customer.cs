@@ -19,10 +19,10 @@ namespace Car_Wash_Management_System
         string title = "Car Wash Management System";
         public Customer()
         {
-         
             InitializeComponent();
             loadCustomer();
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

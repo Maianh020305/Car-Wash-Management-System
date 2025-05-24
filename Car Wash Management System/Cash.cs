@@ -19,6 +19,15 @@ namespace Car_Wash_Management_System
         string title = "Car Wash Management System";
         public int customerId = 0, vehicleTypeId = 0;
         public string carno, carmodel;
+        MainForm main;
+        public Cash(MainForm mainForm)
+        {
+            InitializeComponent();
+            getTransno();
+            loadCash();
+            main = mainForm;
+        }
+
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
@@ -28,12 +37,16 @@ namespace Car_Wash_Management_System
 
         private void btnAddService_Click(object sender, EventArgs e)
         {
-    
+            openChildForm(new CashService(this));
+            btnAddCustomer.Enabled = false;
         }
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            
+            SettlePayment module = new SettlePayment(this);
+            module.txtSale.Text = lblTotal.Text;
+            module.ShowDialog();
+            main.loadGrossProfit();
         }
 
         MainForm main;
@@ -125,41 +138,6 @@ namespace Car_Wash_Management_System
         }
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelCash_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTransno_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }

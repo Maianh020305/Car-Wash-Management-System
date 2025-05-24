@@ -114,7 +114,7 @@ namespace Car_Wash_Management_System
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Clear();
         }
         #region method
         // to create a function vehicle type for return data table of vehicle type
