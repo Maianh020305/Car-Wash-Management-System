@@ -240,5 +240,10 @@ namespace Car_Wash_Management_System
             txtComName.Clear();
             txtComAddress.Clear();
         }
+
+        private void txtSearchVT_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

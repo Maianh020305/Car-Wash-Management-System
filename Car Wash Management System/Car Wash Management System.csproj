@@ -209,6 +209,12 @@
     <Compile Include="CashCustomer.Designer.cs">
       <DependentUpon>CashCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="CashService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashService.Designer.cs">
+      <DependentUpon>CashService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CashCustomer.resx">
       <DependentUpon>CashCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashService.resx">
+      <DependentUpon>CashService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>

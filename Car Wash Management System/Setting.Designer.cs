@@ -101,10 +101,10 @@
             // 
             this.tabPage1.Controls.Add(this.dgvVehicleType);
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(941, 369);
+            this.tabPage1.Size = new System.Drawing.Size(941, 365);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vehicle Type";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.dgvVehicleType.RowHeadersVisible = false;
             this.dgvVehicleType.RowHeadersWidth = 51;
             this.dgvVehicleType.RowTemplate.Height = 24;
-            this.dgvVehicleType.Size = new System.Drawing.Size(935, 288);
+            this.dgvVehicleType.Size = new System.Drawing.Size(935, 284);
             this.dgvVehicleType.TabIndex = 3;
             // 
             // Column1
@@ -150,7 +150,7 @@
             this.Column1.HeaderText = "No";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 62;
+            this.Column1.Width = 76;
             // 
             // Column2
             // 
@@ -158,7 +158,7 @@
             this.Column2.HeaderText = "Id";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 54;
+            this.Column2.Width = 67;
             // 
             // Column3
             // 
@@ -173,7 +173,7 @@
             this.Column4.HeaderText = "Level";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 83;
+            this.Column4.Width = 103;
             // 
             // Edit
             // 
@@ -184,7 +184,7 @@
             this.Edit.Name = "Edit";
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Edit.Width = 21;
+            this.Edit.Width = 27;
             // 
             // Delete
             // 
@@ -202,7 +202,7 @@
             this.panel2.Controls.Add(this.txtSearchVT);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 291);
+            this.panel2.Location = new System.Drawing.Point(3, 287);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(935, 75);
             this.panel2.TabIndex = 2;
@@ -222,8 +222,9 @@
             // 
             this.txtSearchVT.Location = new System.Drawing.Point(94, 26);
             this.txtSearchVT.Name = "txtSearchVT";
-            this.txtSearchVT.Size = new System.Drawing.Size(164, 30);
+            this.txtSearchVT.Size = new System.Drawing.Size(164, 34);
             this.txtSearchVT.TabIndex = 1;
+            this.txtSearchVT.TextChanged += new System.EventHandler(this.txtSearchVT_TextChanged_1);
             // 
             // label1
             // 
@@ -231,7 +232,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 21);
+            this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search ";
             // 
@@ -239,10 +240,10 @@
             // 
             this.tabPage2.Controls.Add(this.dgvCostofGoodSold);
             this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(941, 369);
+            this.tabPage2.Size = new System.Drawing.Size(941, 370);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cost of Good Sold";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -280,7 +281,7 @@
             this.dgvCostofGoodSold.RowHeadersVisible = false;
             this.dgvCostofGoodSold.RowHeadersWidth = 51;
             this.dgvCostofGoodSold.RowTemplate.Height = 24;
-            this.dgvCostofGoodSold.Size = new System.Drawing.Size(935, 288);
+            this.dgvCostofGoodSold.Size = new System.Drawing.Size(935, 289);
             this.dgvCostofGoodSold.TabIndex = 4;
             this.dgvCostofGoodSold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvControlGoodSold_CellContentClick);
             // 
@@ -290,7 +291,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 62;
+            this.dataGridViewTextBoxColumn1.Width = 76;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -298,7 +299,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Id";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 54;
+            this.dataGridViewTextBoxColumn2.Width = 67;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -315,7 +316,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Cost";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 78;
+            this.dataGridViewTextBoxColumn4.Width = 95;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -323,7 +324,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Date";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 81;
+            this.dataGridViewTextBoxColumn5.Width = 99;
             // 
             // EditCoG
             // 
@@ -334,7 +335,7 @@
             this.EditCoG.Name = "EditCoG";
             this.EditCoG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EditCoG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EditCoG.Width = 21;
+            this.EditCoG.Width = 27;
             // 
             // DeleteCoG
             // 
@@ -352,7 +353,7 @@
             this.panel3.Controls.Add(this.txtSearchCoG);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 291);
+            this.panel3.Location = new System.Drawing.Point(3, 292);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(935, 75);
             this.panel3.TabIndex = 3;
@@ -373,7 +374,7 @@
             // 
             this.txtSearchCoG.Location = new System.Drawing.Point(94, 26);
             this.txtSearchCoG.Name = "txtSearchCoG";
-            this.txtSearchCoG.Size = new System.Drawing.Size(164, 30);
+            this.txtSearchCoG.Size = new System.Drawing.Size(164, 34);
             this.txtSearchCoG.TabIndex = 1;
             this.txtSearchCoG.TextChanged += new System.EventHandler(this.txtSearchCoG_TextChanged);
             // 
@@ -383,7 +384,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 21);
+            this.label2.Size = new System.Drawing.Size(92, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Search ";
             // 
@@ -395,9 +396,9 @@
             this.tabPage3.Controls.Add(this.txtComName);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(941, 374);
+            this.tabPage3.Size = new System.Drawing.Size(941, 370);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Company Name";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -434,14 +435,14 @@
             // 
             this.txtComAddress.Location = new System.Drawing.Point(338, 145);
             this.txtComAddress.Name = "txtComAddress";
-            this.txtComAddress.Size = new System.Drawing.Size(406, 30);
+            this.txtComAddress.Size = new System.Drawing.Size(406, 34);
             this.txtComAddress.TabIndex = 3;
             // 
             // txtComName
             // 
             this.txtComName.Location = new System.Drawing.Point(338, 99);
             this.txtComName.Name = "txtComName";
-            this.txtComName.Size = new System.Drawing.Size(406, 30);
+            this.txtComName.Size = new System.Drawing.Size(406, 34);
             this.txtComName.TabIndex = 2;
             // 
             // label4
@@ -449,7 +450,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(119, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 21);
+            this.label4.Size = new System.Drawing.Size(226, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "Company Address :";
             // 
@@ -458,7 +459,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(119, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 21);
+            this.label3.Size = new System.Drawing.Size(207, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Company Name :";
             // 

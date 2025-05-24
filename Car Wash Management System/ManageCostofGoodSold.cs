@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +15,7 @@ namespace Car_Wash_Management_System
     public partial class ManageCostofGoodSold: Form
     {
         SqlCommand cm = new SqlCommand();
-        dbConnect dbcon = new dbConnect();
+        dbConnect dbcon = new dbConnect();  
         string title = "Car Wash Management System";
         Setting setting;
         bool check = false;

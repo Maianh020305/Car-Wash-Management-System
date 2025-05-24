@@ -405,7 +405,7 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 71;
+            this.dataGridViewTextBoxColumn2.Width = 74;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -430,7 +430,7 @@
             this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 102;
+            this.dataGridViewTextBoxColumn5.Width = 103;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -482,7 +482,7 @@
             this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Visible = false;
-            this.dataGridViewTextBoxColumn11.Width = 109;
+            this.dataGridViewTextBoxColumn11.Width = 102;
             // 
             // dataGridViewImageColumn1
             // 
