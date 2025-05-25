@@ -38,7 +38,7 @@ namespace Car_Wash_Management_System
                     MessageBox.Show("Required vehicle type name!", "Warning");
                     return; // return to the data field and form
                 }
-                if (MessageBox.Show("Are you sure you want to register this vehicle type?", "Vehicle Type Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có chắc muốn đăng ký loại xe?", "Đăng ký loại xe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("INSERT INTO tbVehicleType(name,class)VALUES(@name,@class)", dbcon.connect());
                     cm.Parameters.AddWithValue("@name", txtName.Text);
@@ -47,7 +47,7 @@ namespace Car_Wash_Management_System
                     dbcon.open();// to open connection
                     cm.ExecuteNonQuery();
                     dbcon.close();// to close connection
-                    MessageBox.Show("Vehicle type has been successfully registered!", title);
+                    MessageBox.Show("Loại xe đã được đăng ký thành công!", title);
                     Clear();//to clear data field, after data inserted into the database
                     setting.loadVehicleType();
                 }
@@ -64,10 +64,10 @@ namespace Car_Wash_Management_System
             {
                 if (txtName.Text == "")
                 {
-                    MessageBox.Show("Required vehicle type name!", "Warning");
+                    MessageBox.Show("Yêu cầu nhập loại xe!", "Cảnh báo");
                     return; // return to the data field and form
                 }
-                if (MessageBox.Show("Are you sure you want to edit this vehicle type?", "Vehicle Type Editing", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn cập nhật loại xe?", "Cập nhật loại xe", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("UPDATE tbVehicleType SET name=@name, class=@class WHERE id=@id", dbcon.connect());
                     cm.Parameters.AddWithValue("@id", lblVid.Text);
@@ -77,7 +77,7 @@ namespace Car_Wash_Management_System
                     dbcon.open();// to open connection
                     cm.ExecuteNonQuery();
                     dbcon.close();// to close connection
-                    MessageBox.Show("Vehicle type has been successfully Edited!", title);
+                    MessageBox.Show("Cập nhật loại xe thành công!", title);
                     Clear();//to clear data field, after data inserted into the database
                     this.Dispose();
                 }
@@ -90,7 +90,7 @@ namespace Car_Wash_Management_System
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Clear();
         }
 
         #region method

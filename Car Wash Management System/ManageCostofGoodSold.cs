@@ -37,7 +37,7 @@ namespace Car_Wash_Management_System
                 checkField();
                 if (check)
                 {
-                    if (MessageBox.Show("Are you sure you want to register this cost of good sold?", "Cost of Good Sold Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn có chắc chắn muốn đăng ký chi phí?", "Đăng ký chi phí", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cm = new SqlCommand("INSERT INTO tbCostofGood(costname,cost,date)VALUES(@costname,@cost,@date)", dbcon.connect());
                         cm.Parameters.AddWithValue("@costname", txtCostName.Text);
@@ -47,7 +47,7 @@ namespace Car_Wash_Management_System
                         dbcon.open();// to open connection
                         cm.ExecuteNonQuery();
                         dbcon.close();// to close connection
-                        MessageBox.Show("Cost of good sold has been successfully registered!", title);
+                        MessageBox.Show("Chi phí đã được đăng ký thành công!", title);
                         Clear();//to clear data field, after data inserted into the database
                         setting.loadCostofGood();
                     }
@@ -66,7 +66,7 @@ namespace Car_Wash_Management_System
                 checkField();
                 if (check)
                 {
-                    if (MessageBox.Show("Are you sure you want to edit this cost of good sold?", "Cost of Good Sold Editing", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn có chắc chắn muốn chỉnh sửa chi phí?", "Chỉnh sửa chi phí", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cm = new SqlCommand("UPDATE tbCostofGood SET costname=@costname, cost=@cost, date=@date WHERE id=@id", dbcon.connect());
                         cm.Parameters.AddWithValue("@id", lblCid.Text);
@@ -77,7 +77,7 @@ namespace Car_Wash_Management_System
                         dbcon.open();// to open connection
                         cm.ExecuteNonQuery();
                         dbcon.close();// to close connection
-                        MessageBox.Show("Cost of good sold has been successfully Edited!", title);
+                        MessageBox.Show("Chi phí đã được chỉnh sửa thành công!", title);
                         Clear();//to clear data field, after data inserted into the database
                         this.Dispose();
                     }
@@ -104,7 +104,7 @@ namespace Car_Wash_Management_System
         {
             if (txtCostName.Text == "" || txtCost.Text == "")
             {
-                MessageBox.Show("Required data field!", "Warning");
+                MessageBox.Show("Yêu cầu nhập dữ liệu!", "Cảnh báo");
                 return; // return to the data field and form
             }
             check = true;

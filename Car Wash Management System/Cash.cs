@@ -129,15 +129,6 @@ namespace Car_Wash_Management_System
             loadCash();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cash_Load(object sender, EventArgs e)
-        {
-        }
-
         public void loadCash()
         {
             int i = 0;

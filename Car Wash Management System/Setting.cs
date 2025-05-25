@@ -185,7 +185,7 @@ namespace Car_Wash_Management_System
         {
             try
             {
-                if (MessageBox.Show("Save company detail?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Lưu chi tiết cửa hàng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {// now we create a function for execute querry only one line 
                     if (hasdetail)
                     {
@@ -195,7 +195,7 @@ namespace Car_Wash_Management_System
                     {
                         dbcon.executeQuery("INSERT INTO tbCompany (name,address)VALUES('" + txtComName.Text + "','" + txtComAddress.Text + "')");
                     }
-                    MessageBox.Show("Company detail has been successfully saved!", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Chi tiết cửa hàng đã được lưu thành công!", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

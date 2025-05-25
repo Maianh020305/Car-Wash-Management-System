@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Policy;
+using CarWashManagementSystem;
 
 namespace Car_Wash_Management_System
 {
@@ -108,7 +109,7 @@ namespace Car_Wash_Management_System
                         dbcon.executeQuery("UPDATE tbCustomer SET points += " + 1 + " WHERE id='" + cash.customerId + "'");
                     }
 
-                    recipt module = new recipt(cash);
+                    receipt module = new receipt(cash);
                     module.loadReceipt(txtCash.Text, txtChange.Text);
                     module.ShowDialog();
 

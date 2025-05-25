@@ -8,33 +8,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Car_Wash_Management_System;
 using Microsoft.Reporting.WinForms;
 
-namespace Car_Wash_Management_System
+
+namespace CarWashManagementSystem
 {
-    public partial class recipt : Form
+    public partial class receipt : Form
     {
         SqlCommand cm = new SqlCommand();
         dbConnect dbcon = new dbConnect();
-        SqlDataReader dr;
+        SqlDataReader dr;   
         string title = "Car Wash Management System";
         string company, address;
         Cash cash;
-
-        public recipt(Cash cashform)
+        public receipt(Cash cashform)
         {
             InitializeComponent();
             cash = cashform;
             loadCompany();
         }
 
+        private void receipt_Load(object sender, EventArgs e)
+        {
+            this.reportViewer1.RefreshReport();
+        }
+        // load conpany and address
         public void loadCompany()
         {
             cm = new SqlCommand("SELECT * FROM tbCompany", dbcon.connect());
             dbcon.open();
             dr = cm.ExecuteReader();
             dr.Read();
-            if (dr.HasRows)
+            if(dr.HasRows)
             {
                 company = dr["name"].ToString();
                 address = dr["address"].ToString();
@@ -43,39 +49,39 @@ namespace Car_Wash_Management_System
             dbcon.close();
         }
 
-        private void recipt_Load_1(object sender, EventArgs e)
+        private void reportViewer1_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+
         }
 
-        public void loadReceipt(string pcash, string pchange)
+        //with two argurement 
+        public void loadReceipt(string pcash,string pchange)
         {
             ReportDataSource rptDataSource;
             try
             {
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Report\Report1.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptReceipt.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
                 SqlDataAdapter da = new SqlDataAdapter();
                 //service name and price form tbservice and tbcash 
                 dbcon.open();
-                da.SelectCommand = new SqlCommand("SELECT s.name, c.price FROM tbCash AS c INNER JOIN tbService AS s ON c.sid=s.id WHERE c.transno LIKE '" + cash.lblTransno.Text + "'", dbcon.connect());
+                da.SelectCommand = new SqlCommand("SELECT s.name, c.price FROM tbCash AS c INNER JOIN tbService AS s ON c.sid=s.id WHERE c.transno LIKE '"+ cash.lblTransno.Text+"'",dbcon.connect());
                 da.Fill(ds.Tables["dtReceipt"]);
                 dbcon.close();
 
-                ReportParameter pCompany = new ReportParameter("pCompany", company);
-                ReportParameter pAddress = new ReportParameter("pAddress", address);
-                ReportParameter pChange = new ReportParameter("pChange", pchange);
-                ReportParameter pCash = new ReportParameter("pCash", pcash);
-                ReportParameter pTotal = new ReportParameter("pTotal", cash.lblTotal.Text);
-                ReportParameter pTransaction = new ReportParameter("pTransaction", cash.lblTransno.Text);
-                ReportParameter pCarno = new ReportParameter("pCarno", cash.carno);
-                ReportParameter pCarModel = new ReportParameter("pCarModel", cash.carmodel);
+                ReportParameter pCompany = new ReportParameter("pCompany",company);
+                ReportParameter pAddress = new ReportParameter("pAddress",address);
+                ReportParameter pChange = new ReportParameter("pChange",pchange);
+                ReportParameter pCash = new ReportParameter("pCash",pcash);
+                ReportParameter pTotal = new ReportParameter("pTotal",cash.lblTotal.Text);
+                ReportParameter pTransaction = new ReportParameter("pTransaction",cash.lblTransno.Text);
+                ReportParameter pCarno = new ReportParameter("pCarno",cash.carno);
+                ReportParameter pCarModel = new ReportParameter("pCarModel",cash.carmodel);
 
 
-                // now add to the local reportViewer
+    
                 reportViewer1.LocalReport.SetParameters(pCompany);
                 reportViewer1.LocalReport.SetParameters(pAddress);
                 reportViewer1.LocalReport.SetParameters(pChange);

@@ -76,7 +76,6 @@
             this.dgvService.RowHeadersWidth = 62;
             this.dgvService.Size = new System.Drawing.Size(914, 161);
             this.dgvService.TabIndex = 6;
-            this.dgvService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvService_CellContentClick);
             // 
             // Column1
             // 
@@ -128,7 +127,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(914, 35);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtSearch
             // 

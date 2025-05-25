@@ -92,7 +92,7 @@ namespace Car_Wash_Management_System
                 checkField();
                 if (check)
                 {
-                    if (MessageBox.Show("Are you sure you want to register this employer?", "Employer Registraion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn có chắc chắn muốn thêm nhân viên?", "Đăng ký nhân viên", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cm = new SqlCommand("INSERT INTO tbEmployer(name,phone,address,dob,gender,role,salary,password)VALUES(@name,@phone,@address,@dob,@gender,@role,@salary,@password)", dbcon.connect());
                         cm.Parameters.AddWithValue("@name", txtName.Text);
@@ -107,7 +107,7 @@ namespace Car_Wash_Management_System
                         dbcon.open();// to open connection
                         cm.ExecuteNonQuery();
                         dbcon.close();// to close connection
-                        MessageBox.Show("Employer has been successfully registered!", title);
+                        MessageBox.Show("Nhân viên đã được đăng ký thành công!", title);
                         check = false;
                         Clear();//to clear data field, after data inserted into the database                        
                                 //employer.loadEmployer(); // refresh the employer list after insert data in the table
@@ -128,7 +128,7 @@ namespace Car_Wash_Management_System
                 checkField();
                 if (check)
                 {
-                    if (MessageBox.Show("Are you sure you want to edit this record ?", "Employer Editing", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn có chắc chắn muốn cấp nhật nhân viên ?", "Cập nhật nhân viên", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cm = new SqlCommand("UPDATE tbEmployer SET name=@name, phone=@phone, address=@address, dob=@dob, gender=@gender, role=@role, salary=@salary, password=@password WHERE id=@id", dbcon.connect());
                         cm.Parameters.AddWithValue("@id", lblEid.Text);
@@ -144,7 +144,7 @@ namespace Car_Wash_Management_System
                         dbcon.open();// to open connection
                         cm.ExecuteNonQuery();
                         dbcon.close();// to close connection
-                        MessageBox.Show("Employer has been successfully registered!", title);
+                        MessageBox.Show("Nhân viên đã được cập nhật thành công!", title);
                         Clear();//to clear data field, after data inserted into the database
                         this.Dispose();
                         employer.loadEmployer();

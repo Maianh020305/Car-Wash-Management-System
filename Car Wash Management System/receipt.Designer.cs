@@ -1,6 +1,7 @@
-﻿namespace Car_Wash_Management_System
+﻿
+namespace CarWashManagementSystem
 {
-    partial class recipt
+    partial class receipt
     {
         /// <summary>
         /// Required designer variable.
@@ -33,26 +34,32 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(345, 442);
+            this.reportViewer1.Size = new System.Drawing.Size(360, 495);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // recipt
+            // receipt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 439);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(360, 495);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "recipt";
-            this.Text = "recipt";
-            this.Load += new System.EventHandler(this.recipt_Load_1);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "receipt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Hóa Đơn";
+            this.Load += new System.EventHandler(this.receipt_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

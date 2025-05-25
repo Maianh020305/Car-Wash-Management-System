@@ -26,15 +26,9 @@ namespace Car_Wash_Management_System
             loadService();
         }
 
-        private void dgvService_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+  
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+  
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
